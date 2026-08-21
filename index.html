@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IronWeb Digital | Websites for Small Businesses</title>
+
+  <meta
+    name="description"
+    content="IronWeb Digital builds modern, professional websites designed to help small businesses build trust, generate leads, and grow online."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0c0e11;
+      color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand span {
+      color: #e58b36;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #e7e7e7;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #e58b36;
+    }
+
+    .nav-button {
+      background: #e58b36;
+      color: #111;
+      padding: 11px 18px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 160px 8% 100px;
+
+      background:
+        radial-gradient(
+          circle at 80% 40%,
+          rgba(229, 139, 54, 0.15),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #11151a,
+          #090b0e
+        );
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: #e58b36;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin: 18px 0 28px;
+      max-width: 950px;
+    }
+
+    .hero h1 span {
+      color: #e58b36;
+    }
+
+    .hero-description {
+      max-width: 670px;
+      color: #b9bdc3;
+      font-size: 20px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button,
+    .secondary-button {
+      display: inline-block;
+      padding: 15px 23px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary-button {
+      background: #e58b36;
+      color: #111;
+    }
+
+    .secondary-button {
+      border: 1px solid #444a51;
+      color: white;
+    }
+
+    .secondary-button:hover {
+      border-color: #e58b36;
+    }
+
+    .trust-strip {
+      background: #15191e;
+      padding: 24px 8%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      border-top: 1px solid #242a30;
+      border-bottom: 1px solid #242a30;
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .trust-item span {
+      color: #858b92;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 110px 8%;
+    }
+
+    .light-section {
+      background: #f2f1ed;
+      color: #17191c;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin: 10px 0 18px;
+    }
+
+    .section-description {
+      color: #858b92;
+      max-width: 650px;
+      font-size: 18px;
+    }
+
+    .light-section .section-description {
+      color: #646a70;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #15191e;
+      border: 1px solid #252b31;
+      padding: 35px;
+      border-radius: 14px;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: #e58b36;
+    }
+
+    .service-number {
+      color: #e58b36;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      font-size: 23px;
+      margin: 13px 0 10px;
+    }
+
+    .service-card p {
+      color: #969ca3;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      border-top: 3px solid #e58b36;
+      padding-top: 22px;
+    }
+
+    .process-card span {
+      color: #e58b36;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .process-card h3 {
+      margin: 8px 0;
+    }
+
+    .process-card p {
+      color: #646a70;
+    }
+
+    .portfolio-card {
+      background: #15191e;
+      border: 1px solid #282e34;
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    .portfolio-preview {
+      min-height: 430px;
+      background:
+        linear-gradient(
+          rgba(13, 28, 17, 0.58),
+          rgba(13, 28, 17, 0.78)
+        ),
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1200&q=80");
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 35px;
+    }
+
+    .preview-label {
+      background: #d6a85f;
+      color: #172018;
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .portfolio-info {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .portfolio-info h3 {
+      font-size: 34px;
+      margin: 10px 0 15px;
+    }
+
+    .portfolio-info p {
+      color: #969ca3;
+      margin-bottom: 25px;
+    }
+
+    .portfolio-features {
+      margin-bottom: 28px;
+    }
+
+    .portfolio-features div {
+      padding: 7px 0;
+      color: #c4c7ca;
+    }
+
+    .portfolio-link {
+      color: #e58b36;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid #dadbd9;
+      padding: 35px;
+      border-radius: 14px;
+    }
+
+    .price-card.featured {
+      border: 2px solid #e58b36;
+      transform: translateY(-8px);
+    }
+
+    .price-label {
+      color: #d27620;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .price-card h3 {
+      font-size: 25px;
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 37px;
+      font-weight: 800;
+      margin: 15px 0;
+    }
+
+    .price-card p {
+      color: #646a70;
+    }
+
+    .price-features {
+      margin: 25px 0;
+    }
+
+    .price-features div {
+      padding: 7px 0;
+    }
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-section .section-heading {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      background: #15191e;
+      border: 1px solid #292f35;
+      border-radius: 16px;
+      padding: 45px;
+    }
+
+    .contact-box p {
+      color: #a4a9ae;
+      margin-bottom: 25px;
+    }
+
+    .email-link {
+      display: inline-block;
+      background: #e58b36;
+      color: #111;
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #080a0c;
+      border-top: 1px solid #20252a;
+      padding: 35px 8%;
+      color: #777e85;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .process-grid,
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-card {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-preview {
+        min-height: 330px;
+      }
+
+      .portfolio-info {
+        padding: 35px;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .section {
+        padding: 80px 6%;
+      }
+
+      nav {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+    }
+  </style>
+</head>
+
+<script>
+  const ironwebForm = document.getElementById("ironweb-form");
+  const ironwebMessage = document.getElementById("ironweb-form-message");
+
+  ironwebForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(ironwebForm);
+
+    ironwebMessage.textContent = "Sending your request...";
+
+    try {
+      const response = await fetch(ironwebForm.action, {
+        method: ironwebForm.method,
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        const name =
+          document.getElementById("client-name").value;
+
+        ironwebMessage.textContent =
+          "Thanks, " + name + "! Your project request has been sent.";
+
+        ironwebForm.reset();
+
+      } else {
+        ironwebMessage.textContent =
+          "Something went wrong. Please try again.";
+      }
+
+    } catch (error) {
+      ironwebMessage.textContent =
+        "Unable to send right now. Please try again.";
+    }
+  });
+</script>
+<body>
+
+  <nav>
+
+    <div class="brand">
+      IronWeb <span>Digital</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#contact" class="nav-button">
+      Start a Project
+    </a>
+
+  </nav>
+
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <p class="eyebrow">
+        Websites Built for Small Business
+      </p>
+
+      <h1>
+        Your Business Deserves a
+        <span>Better Website.</span>
+      </h1>
+
+      <p class="hero-description">
+        IronWeb Digital builds modern, professional websites
+        designed to help small businesses look established,
+        earn customer trust, and turn visitors into leads.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#contact" class="primary-button">
+          Start Your Website
+        </a>
+
+        <a href="#work" class="secondary-button">
+          See Our Work
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <section class="trust-strip">
+
+    <div class="trust-item">
+      <strong>Professional Design</strong>
+      <span>Built around your business</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Mobile Friendly</strong>
+      <span>Designed for phones and computers</span>
+    </div>
+
+    <div class="trust-item">
+      <strong>Lead Focused</strong>
+      <span>Built to turn visitors into customers</span>
+    </div>
+
+  </section>
+
+
+  <section class="section" id="services">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">What We Build</p>
+
+      <h2>
+        More Than Just a Pretty Website.
+      </h2>
+
+      <p class="section-description">
+        Your website should make it easier for customers to
+        understand your business, trust your work, and contact you.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-number">01</span>
+
+        <h3>Business Websites</h3>
+
+        <p>
+          Modern websites built around your services,
+          brand, customers, and goals.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <span class="service-number">02</span>
+
+        <h3>Lead Generation</h3>
+
+        <p>
+          Quote forms, contact systems, calls-to-action,
+          and layouts designed to generate inquiries.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <span class="service-number">03</span>
+
+        <h3>Mobile Design</h3>
+
+        <p>
+          Responsive websites that remain clean and easy
+          to use on phones, tablets, and desktops.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section light-section" id="process">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">How It Works</p>
+
+      <h2>
+        Getting Online Doesn't Have to Be Complicated.
+      </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="process-card">
+        <span>STEP 01</span>
+        <h3>Tell Us About Your Business</h3>
+        <p>
+          We learn about your services, customers,
+          goals, and what you need online.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <span>STEP 02</span>
+        <h3>We Build</h3>
+        <p>
+          We create a website designed specifically
+          around your business.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <span>STEP 03</span>
+        <h3>You Review</h3>
+        <p>
+          You see the website and request changes
+          before anything is finalized.
+        </p>
+      </div>
+
+      <div class="process-card">
+        <span>STEP 04</span>
+        <h3>Go Live</h3>
+        <p>
+          Once approved, your new website is prepared
+          for customers to visit.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section" id="work">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">Our Work</p>
+
+      <h2>
+        Built for Real-World Businesses.
+      </h2>
+
+      <p class="section-description">
+        Explore examples of websites designed to help
+        local businesses establish a stronger online presence.
+      </p>
+
+    </div>
+
+
+    <div class="portfolio-card">
+
+      <div class="portfolio-preview">
+
+        <span class="preview-label">
+          Landscaping Demo
+        </span>
+
+      </div>
+
+
+      <div class="portfolio-info">
+
+        <p class="eyebrow">
+          Featured Project
+        </p>
+
+        <h3>
+          Steel City Landscaping
+        </h3>
+
+        <p>
+          A complete demonstration website for a fictional
+          landscaping company, built around customer trust
+          and lead generation.
+        </p>
+
+        <div class="portfolio-features">
+          <div>✓ Mobile responsive design</div>
+          <div>✓ Free-estimate lead form</div>
+          <div>✓ Click-to-call functionality</div>
+          <div>✓ Services and business information</div>
+          <div>✓ Live public deployment</div>
+        </div>
+
+        <a
+          class="portfolio-link"
+          href="https://sabien001.github.io/steel-city-landscaping-demo/"
+          target="_blank"
+        >
+          View Live Demo →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section light-section" id="pricing">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">Website Options</p>
+
+      <h2>
+        Straightforward Website Packages.
+      </h2>
+
+      <p class="section-description">
+        Every business is different. These packages provide
+        a starting point based on the size and needs of your project.
+      </p>
+
+    </div>
+
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+
+        <p class="price-label">Starter</p>
+
+        <h3>Essential Website</h3>
+
+        <div class="price">
+          Starting at $150
+        </div>
+
+        <p>
+          For small businesses that need a clean,
+          professional online presence.
+        </p>
+
+        <div class="price-features">
+          <div>✓ Professional one-page website</div>
+          <div>✓ Mobile responsive</div>
+          <div>✓ Services section</div>
+          <div>✓ Contact information</div>
+          <div>✓ Basic SEO setup</div>
+        </div>
+
+      </div>
+
+
+      <div class="price-card featured">
+
+        <p class="price-label">Most Popular</p>
+
+        <h3>Business Website</h3>
+
+        <div class="price">
+          Starting at $300
+        </div>
+
+        <p>
+          For businesses that want a stronger website
+          focused on generating customer inquiries.
+        </p>
+
+        <div class="price-features">
+          <div>✓ Everything in Starter</div>
+          <div>✓ Lead/contact form</div>
+          <div>✓ Project or gallery section</div>
+          <div>✓ Reviews/testimonials section</div>
+          <div>✓ Stronger conversion design</div>
+        </div>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <p class="price-label">Custom</p>
+
+        <h3>Custom Project</h3>
+
+        <div class="price">
+          Starting at $600
+        </div>
+
+        <p>
+          For businesses that need something beyond
+          a standard small-business website.
+        </p>
+
+        <div class="price-features">
+          <div>✓ Custom page structure</div>
+          <div>✓ Advanced functionality</div>
+          <div>✓ Custom integrations</div>
+          <div>✓ Larger website builds</div>
+          <div>✓ Project-based pricing</div>
+        </div>
+
+      </div>
+
+    </div>
+<p style="margin-top: 35px; color: #646a70; font-size: 14px;">
+  Pricing varies based on project scope and requested features.
+  Domain registration, hosting, premium third-party services, and
+  ongoing maintenance may be priced separately when applicable.
+</p>
+  </section>
+
+
+ <section class="section contact-section" id="contact">
+
+  <div class="section-heading">
+
+    <p class="eyebrow">Let's Build Something</p>
+
+    <h2>
+      Ready to Give Your Business a Better Website?
+    </h2>
+
+    <p class="section-description">
+      Tell us about your business and what you're looking for.
+      There's no obligation to get started.
+    </p>
+
+  </div>
+
+
+  <div class="contact-box">
+
+    <h3>Start a Project</h3>
+
+    <p>
+      Fill out the form below and IronWeb Digital will review your
+      project and get back to you.
+    </p>
+
+    <form
+      id="ironweb-form"
+      action="https://formspree.io/f/mzepwrdd"
+      method="POST"
+    >
+
+      <input
+        type="text"
+        name="name"
+        id="client-name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="text"
+        name="business_name"
+        placeholder="Business Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number (Optional)"
+      >
+
+      <input
+        type="url"
+        name="current_website"
+        placeholder="Current Website (Optional)"
+      >
+
+      <select name="package_interest" required>
+        <option value="">Which package are you interested in?</option>
+        <option value="Starter">$150+ Starter</option>
+        <option value="Business">$300+ Business</option>
+        <option value="Growth">$600+ Growth / Custom</option>
+        <option value="Not Sure">I'm Not Sure Yet</option>
+      </select>
+
+      <textarea
+        name="project_details"
+        rows="6"
+        placeholder="Tell us what you need..."
+        required
+      ></textarea>
+
+      <button class="submit-button" type="submit">
+        Send Project Request
+      </button>
+
+      <p id="ironweb-form-message"></p>
+
+    </form>
+
+  </div>
+
+</section>
