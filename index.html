@@ -385,7 +385,31 @@
     .price-features div {
       padding: 7px 0;
     }
+.package-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 13px 18px;
+  background: #17191c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
 
+.package-button:hover {
+  background: #e58b36;
+  color: #111;
+}
+
+.price-card.featured .package-button {
+  background: #e58b36;
+  color: #111;
+}
+
+.price-card.featured .package-button:hover {
+  opacity: 0.85;
+}
     .contact-section {
       text-align: center;
     }
@@ -473,49 +497,11 @@
         padding-right: 6%;
       }
     }
+
   </style>
 </head>
 
-<script>
-  const ironwebForm = document.getElementById("ironweb-form");
-  const ironwebMessage = document.getElementById("ironweb-form-message");
 
-  ironwebForm.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const formData = new FormData(ironwebForm);
-
-    ironwebMessage.textContent = "Sending your request...";
-
-    try {
-      const response = await fetch(ironwebForm.action, {
-        method: ironwebForm.method,
-        body: formData,
-        headers: {
-          "Accept": "application/json"
-        }
-      });
-
-      if (response.ok) {
-        const name =
-          document.getElementById("client-name").value;
-
-        ironwebMessage.textContent =
-          "Thanks, " + name + "! Your project request has been sent.";
-
-        ironwebForm.reset();
-
-      } else {
-        ironwebMessage.textContent =
-          "Something went wrong. Please try again.";
-      }
-
-    } catch (error) {
-      ironwebMessage.textContent =
-        "Unable to send right now. Please try again.";
-    }
-  });
-</script>
 <body>
 
   <nav>
@@ -805,78 +791,99 @@
 
         <h3>Essential Website</h3>
 
-        <div class="price">
-          Starting at $150
-        </div>
+<div class="price">
+  Starting at $150
+</div>
 
-        <p>
-          For small businesses that need a clean,
-          professional online presence.
-        </p>
+<p>
+  For small businesses that need a clean,
+  professional online presence.
+</p>
 
-        <div class="price-features">
-          <div>✓ Professional one-page website</div>
-          <div>✓ Mobile responsive</div>
-          <div>✓ Services section</div>
-          <div>✓ Contact information</div>
-          <div>✓ Basic SEO setup</div>
-        </div>
+<div class="price-features">
+  <div>✓ Professional one-page website</div>
+  <div>✓ Mobile responsive</div>
+  <div>✓ Services section</div>
+  <div>✓ Contact information</div>
+  <div>✓ Basic SEO setup</div>
+</div>
 
-      </div>
+<a
+  href="#contact"
+  class="package-button"
+data-package="Starter">
+  Start With Essential
+</a>
 
-
-      <div class="price-card featured">
-
-        <p class="price-label">Most Popular</p>
-
-        <h3>Business Website</h3>
-
-        <div class="price">
-          Starting at $300
-        </div>
-
-        <p>
-          For businesses that want a stronger website
-          focused on generating customer inquiries.
-        </p>
-
-        <div class="price-features">
-          <div>✓ Everything in Starter</div>
-          <div>✓ Lead/contact form</div>
-          <div>✓ Project or gallery section</div>
-          <div>✓ Reviews/testimonials section</div>
-          <div>✓ Stronger conversion design</div>
-        </div>
-
-      </div>
+</div>
 
 
-      <div class="price-card">
+<div class="price-card featured">
 
-        <p class="price-label">Custom</p>
+  <p class="price-label">Most Popular</p>
 
-        <h3>Custom Project</h3>
+  <h3>Business Website</h3>
 
-        <div class="price">
-          Starting at $600
-        </div>
+  <div class="price">
+    Starting at $300
+  </div>
 
-        <p>
-          For businesses that need something beyond
-          a standard small-business website.
-        </p>
+  <p>
+    For businesses that want a stronger website
+    focused on generating customer inquiries.
+  </p>
 
-        <div class="price-features">
-          <div>✓ Custom page structure</div>
-          <div>✓ Advanced functionality</div>
-          <div>✓ Custom integrations</div>
-          <div>✓ Larger website builds</div>
-          <div>✓ Project-based pricing</div>
-        </div>
+  <div class="price-features">
+    <div>✓ Everything in Starter</div>
+    <div>✓ Lead/contact form</div>
+    <div>✓ Project or gallery section</div>
+    <div>✓ Reviews/testimonials section</div>
+    <div>✓ Stronger conversion design</div>
+  </div>
 
-      </div>
+  <a
+    href="#contact"
+    class="package-button"
+data-package="Business"  >
+    Start With Business
+  </a>
 
-    </div>
+</div>
+
+
+<div class="price-card">
+
+  <p class="price-label">Custom</p>
+
+  <h3>Custom Project</h3>
+
+  <div class="price">
+    Starting at $600
+  </div>
+
+  <p>
+    For businesses that need something beyond
+    a standard small-business website.
+  </p>
+
+  <div class="price-features">
+    <div>✓ Custom page structure</div>
+    <div>✓ Advanced functionality</div>
+    <div>✓ Custom integrations</div>
+    <div>✓ Larger website builds</div>
+    <div>✓ Project-based pricing</div>
+  </div>
+
+  <a
+    href="#contact"
+    class="package-button"
+data-package="Growth"  >
+    Discuss My Project
+  </a>
+
+</div>
+
+</div>
 <p style="margin-top: 35px; color: #646a70; font-size: 14px;">
   Pricing varies based on project scope and requested features.
   Domain registration, hosting, premium third-party services, and
@@ -978,3 +985,56 @@
   </div>
 
 </section>
+<script>
+  const ironwebForm = document.getElementById("ironweb-form");
+  const ironwebMessage = document.getElementById("ironweb-form-message");
+const packageSelect =
+  document.querySelector('select[name="package_interest"]');
+
+document.querySelectorAll(".package-button").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const selectedPackage = button.getAttribute("data-package");
+
+    if (packageSelect) {
+      packageSelect.value = selectedPackage;
+    }
+  });
+});
+  ironwebForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(ironwebForm);
+
+    ironwebMessage.textContent = "Sending your request...";
+
+    try {
+      const response = await fetch(ironwebForm.action, {
+        method: ironwebForm.method,
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        const name =
+          document.getElementById("client-name").value;
+
+        ironwebMessage.textContent =
+          "Thanks, " + name + "! Your project request has been sent.";
+
+        ironwebForm.reset();
+
+      } else {
+        ironwebMessage.textContent =
+          "Something went wrong. Please try again.";
+      }
+
+    } catch (error) {
+      ironwebMessage.textContent =
+        "Unable to send right now. Please try again.";
+    }
+  });
+</script>
+</body>
+</html>
