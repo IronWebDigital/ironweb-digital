@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IronWeb Digital | Client Intake</title>
+
+  <meta
+    name="description"
+    content="IronWeb Digital client website intake form."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0c0e11;
+      color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      padding: 60px 6%;
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(229, 139, 54, 0.12),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #11151a,
+          #090b0e
+        );
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 50px;
+    }
+
+    .brand span {
+      color: #e58b36;
+    }
+
+    .eyebrow {
+      color: #e58b36;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin: 12px 0 20px;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: #a8adb3;
+      font-size: 18px;
+      margin-bottom: 45px;
+    }
+
+    .form-card {
+      background: #15191e;
+      border: 1px solid #292f35;
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .section-title {
+      margin-top: 38px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .section-title h2 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .section-title p {
+      color: #8f959c;
+      font-size: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #343b42;
+      background: #0f1216;
+      color: white;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6f767d;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #e58b36;
+      border-color: transparent;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0f1216;
+      border: 1px solid #343b42;
+      padding: 13px;
+      border-radius: 8px;
+    }
+
+    .checkbox-item input {
+      width: auto;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 17px;
+      border: none;
+      border-radius: 8px;
+      background: #e58b36;
+      color: #111;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+
+    #form-message {
+      text-align: center;
+      margin-top: 18px;
+      font-weight: bold;
+    }
+
+    .privacy-note {
+      margin-top: 18px;
+      color: #7e858c;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      color: #666d74;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .form-row,
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card {
+        padding: 25px;
+      }
+
+      .page-shell {
+        padding: 40px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page-shell">
+    <div class="container">
+
+      <div class="brand">
+        IronWeb <span>Digital</span>
+      </div>
+
+      <p class="eyebrow">Client Intake</p>
+
+      <h1>Tell Us About Your Business.</h1>
+
+      <p class="intro">
+        This form gives IronWeb Digital the information needed to plan
+        and build your website efficiently. If you don't know an answer,
+        just leave it blank or tell us you're unsure.
+      </p>
+
+      <form
+        class="form-card"
+        id="client-intake-form"
+        action="https://formspree.io/f/mzepwrdd"
+        method="POST"
+      >
+
+        <div class="section-title">
+          <h2>1. Business Basics</h2>
+          <p>Start with the important information customers should know.</p>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="contact-name">Your Name *</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="contact_name"
+              placeholder="Your name"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="business-name">Business Name *</label>
+            <input
+              type="text"
+              id="business-name"
+              name="business_name"
+              placeholder="Business name"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Business or preferred email"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone number"
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location / Service Area</label>
+          <input
+            type="text"
+            id="location"
+            name="service_area"
+            placeholder="Example: Johnstown and surrounding areas"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="hours">Business Hours</label>
+          <textarea
+            id="hours"
+            name="business_hours"
+            placeholder="Example: Monday-Friday 8 AM-6 PM, Saturday 9 AM-3 PM"
+          ></textarea>
+        </div>
+
+
+        <div class="section-title">
+          <h2>2. Your Current Online Presence</h2>
+          <p>Tell us what you already have.</p>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="website">Current Website</label>
+            <input
+              type="url"
+              id="website"
+              name="current_website"
+              placeholder="https://..."
+            >
+          </div>
+
+          <div>
+            <label for="domain">Do You Own a Domain?</label>
+            <select id="domain" name="owns_domain">
+              <option value="">Select one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="socials">Social Media Links</label>
+          <textarea
+            id="socials"
+            name="social_media_links"
+            placeholder="Facebook, Instagram, TikTok, Google Business Profile, etc."
+          ></textarea>
+        </div>
+
+
+        <div class="section-title">
+          <h2>3. Services & Website Content</h2>
+          <p>What should customers see when they visit your website?</p>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Describe Your Business *</label>
+          <textarea
+            id="description"
+            name="business_description"
+            placeholder="What does your business do? Who do you serve?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="services">Services or Products *</label>
+          <textarea
+            id="services"
+            name="services_products"
+            placeholder="List your main services or products."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What Do You Already Have?</label>
+
+          <div class="checkbox-grid">
+
+            <label class="checkbox-item">
+              <input
+                type="checkbox"
+                name="materials[]"
+                value="Logo"
+              >
+              Logo
+            </label>
+
+            <label class="checkbox-item">
+              <input
+                type="checkbox"
+                name="materials[]"
+                value="Business photos"
+              >
+              Business Photos
+            </label>
+
+            <label class="checkbox-item">
+              <input
+                type="checkbox"
+                name="materials[]"
+                value="Customer reviews"
+              >
+              Customer Reviews
+            </label>
+
+            <label class="checkbox-item">
+              <input
+                type="checkbox"
+                name="materials[]"
+                value="Written content"
+              >
+              Written Content
+            </label>
+
+          </div>
+        </div>
+
+
+        <div class="section-title">
+          <h2>4. What Should the Website Do?</h2>
+          <p>Choose the features that matter to your business.</p>
+        </div>
+
+        <div class="checkbox-grid">
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Contact form"
+            >
+            Contact Form
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Quote request"
+            >
+            Quote Request
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Photo gallery"
+            >
+            Photo / Project Gallery
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Reviews"
+            >
+            Reviews / Testimonials
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Click to call"
+            >
+            Click-to-Call
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Booking"
+            >
+            Booking / Appointments
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Social media links"
+            >
+            Social Media Links
+          </label>
+
+          <label class="checkbox-item">
+            <input
+              type="checkbox"
+              name="features[]"
+              value="Other"
+            >
+            Other / Not Sure
+          </label>
+
+        </div>
+
+
+        <div class="section-title">
+          <h2>5. Design Preferences</h2>
+          <p>This helps us avoid making every IronWeb site look the same.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="colors">Preferred Colors</label>
+          <input
+            type="text"
+            id="colors"
+            name="preferred_colors"
+            placeholder="Example: black and gold, blue and white, no preference"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="style">How Should the Website Feel?</label>
+          <select id="style" name="design_style">
+            <option value="">Select one</option>
+            <option value="Modern and clean">Modern and clean</option>
+            <option value="Bold and energetic">Bold and energetic</option>
+            <option value="Professional and traditional">
+              Professional and traditional
+            </option>
+            <option value="Luxury / premium">Luxury / premium</option>
+            <option value="Friendly and approachable">
+              Friendly and approachable
+            </option>
+            <option value="Minimal">Minimal</option>
+            <option value="Not sure">Not sure — recommend something</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="examples">
+            Websites or Styles You Like
+          </label>
+
+          <textarea
+            id="examples"
+            name="website_examples"
+            placeholder="Paste links or describe websites/styles you like."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="avoid">
+            Anything You Definitely Don't Want?
+          </label>
+
+          <textarea
+            id="avoid"
+            name="design_avoid"
+            placeholder="Colors, layouts, styles, features, etc."
+          ></textarea>
+        </div>
+
+
+        <div class="section-title">
+          <h2>6. Project Details</h2>
+          <p>Help us understand the size and priorities of the project.</p>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="package">Package / Budget</label>
+            <select id="package" name="package_budget">
+              <option value="">Select one</option>
+              <option value="$150+ Starter">$150+ Starter</option>
+              <option value="$300+ Business">$300+ Business</option>
+              <option value="$600+ Growth / Custom">
+                $600+ Growth / Custom
+              </option>
+              <option value="Not sure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="timeline">Preferred Timeline</label>
+            <select id="timeline" name="preferred_timeline">
+              <option value="">Select one</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Within 1 week">Within 1 week</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within 1 month">Within 1 month</option>
+              <option value="No rush">No rush</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="goal">
+            What Is the Main Goal of Your Website? *
+          </label>
+
+          <textarea
+            id="goal"
+            name="website_goal"
+            placeholder="Example: get more quote requests, look more professional, show our work, make it easier for customers to contact us..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="extra">Anything Else We Should Know?</label>
+
+          <textarea
+            id="extra"
+            name="additional_details"
+            placeholder="Special requests, questions, concerns, or anything else."
+          ></textarea>
+        </div>
+
+
+        <button class="submit-button" type="submit">
+          Submit Website Information
+        </button>
+
+        <p id="form-message"></p>
+
+        <p class="privacy-note">
+          This form is intended for IronWeb Digital clients and project planning.
+          Please do not submit passwords, banking information, or other sensitive credentials.
+        </p>
+
+      </form>
+
+      <footer>
+        IronWeb Digital — Websites built for small businesses.
+      </footer>
+
+    </div>
+  </main>
+
+
+  <script>
+    const intakeForm =
+      document.getElementById("client-intake-form");
+
+    const formMessage =
+      document.getElementById("form-message");
+
+    intakeForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(intakeForm);
+
+      formMessage.textContent =
+        "Sending your information...";
+
+      try {
+        const response = await fetch(intakeForm.action, {
+          method: intakeForm.method,
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          const name =
+            document.getElementById("contact-name").value;
+
+          formMessage.textContent =
+            "Thanks, " + name +
+            "! Your website information has been sent to IronWeb Digital.";
+
+          intakeForm.reset();
+
+        } else {
+          formMessage.textContent =
+            "Something went wrong. Please try again.";
+        }
+
+      } catch (error) {
+        formMessage.textContent =
+          "Unable to send right now. Please try again.";
+      }
+    });
+  </script>
+
+</body>
+</html>
